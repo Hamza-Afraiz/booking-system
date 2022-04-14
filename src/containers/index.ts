@@ -1,0 +1,7 @@
+export {default as HomePage} from './HomePage/HomePage'
+export{default as Header} from './Header/Header'
+export {default as Tours} from './Tours/Tours'
+export {default as TourDetails} from './TourDetails/TourDetails'
+export {default as TourHighlights} from './TourHighlights/TourHighlights'
+export {default as ItenarySchedule} from './ItenarySchedule/ItenarySchedule'
+export {default as BookingDetails} from './BookingDetails/BookingDetails'

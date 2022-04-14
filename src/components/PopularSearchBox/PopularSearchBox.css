@@ -1,0 +1,10 @@
+.popular-search-box{
+    border:1px solid lightgrey;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10%;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    color: #202445;
+    margin: 1%;
+    
+}

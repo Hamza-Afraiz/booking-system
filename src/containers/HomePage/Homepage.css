@@ -1,0 +1,10 @@
+.home-page {
+  background-color: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+}
+.background-image-div{
+  width: 100%;
+  height: 400px;
+
+}

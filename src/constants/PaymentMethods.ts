@@ -1,0 +1,1 @@
+export const PaymentMethods=["Easypaisa",'JazzCash','Pioneer'] 

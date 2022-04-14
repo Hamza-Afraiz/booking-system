@@ -1,0 +1,25 @@
+.header-tabs {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+.header-tabs .header-tab {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #202445;
+  
+}
+.header-tab:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #f83030;
+}
+
+.header .header-tab:visited {
+  text-decoration: underline;
+  text-decoration-color: #f83030;
+}
+

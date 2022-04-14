@@ -1,0 +1,14 @@
+.popular-searches {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 7%;
+}
+@media screen and (max-width: 890px) {
+  .popular-searches {
+    margin-top: 30%;
+  }
+}

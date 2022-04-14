@@ -1,0 +1,216 @@
+{
+  "tours": [
+    {
+      "id": 1,
+      "name": "Pérez Art Museum Miami",
+      "description": "The Pérez Art Museum Miami —officially known as the Jorge M. Pérez Art Museum of Miami-Dade County—is a contemporary art museum that relocated in 2013 to the Museum Park in Downtown Miami, Florida. Founded in 1984 as the Center for the Fine Arts, it became known as the Miami Art Museum from 1996 until it was renamed in 2013 upon the opening its new building designed by Herzog & de Meuron at 1103 Biscayne Boulevard.PAMM, along with the $275 million Phillip and Patricia Frost Museum of Science and a city park which are being built in the area with completion in 2017, is part of the 20-acre Museum Park.",
+      "price": "$50 - $100",
+      "duration": "3 days",
+      "itenarySchedule": [
+        {
+          "id": 1,
+          "temperature": "12 C",
+          "weatherType": "sunny",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        },
+        {
+          "id": 2,
+          "temperature": "12 C",
+          "weatherType": "cloudy",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        },
+        {
+          "id": 3,
+          "temperature": "12 C",
+          "weatherType": "rainy",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Golaz Art Pochinki Miami",
+      "description": "The Pérez Art Museum Miami —officially known as the Jorge M. Pérez Art Museum of Miami-Dade County—is a contemporary art museum that relocated in 2013 to the Museum Park in Downtown Miami, Florida. Founded in 1984 as the Center for the Fine Arts, it became known as the Miami Art Museum from 1996 until it was renamed in 2013 upon the opening its new building designed by Herzog & de Meuron at 1103 Biscayne Boulevard.PAMM, along with the $275 million Phillip and Patricia Frost Museum of Science and a city park which are being built in the area with completion in 2017, is part of the 20-acre Museum Park.",
+      "price": "$500 - $1000",
+      "duration": "2 days",
+      "itenarySchedule": [
+        {
+          "id": 1,
+          "temperature": "12 C",
+          "weatherType": "sunny",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        },
+        {
+          "id": 2,
+          "temperature": "12 C",
+          "weatherType": "sunny",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "La Montana ja papo",
+      "description": "The Pérez Art Museum Miami —officially known as the Jorge M. Pérez Art Museum of Miami-Dade County—is a contemporary art museum that relocated in 2013 to the Museum Park in Downtown Miami, Florida. Founded in 1984 as the Center for the Fine Arts, it became known as the Miami Art Museum from 1996 until it was renamed in 2013 upon the opening its new building designed by Herzog & de Meuron at 1103 Biscayne Boulevard.PAMM, along with the $275 million Phillip and Patricia Frost Museum of Science and a city park which are being built in the area with completion in 2017, is part of the 20-acre Museum Park.",
+      "price": "$20 - $100",
+      "duration": "1 day",
+      "itenarySchedule": [
+        {
+          "id": 1,
+          "temperature": "12 C",
+          "weatherType": "rainy",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "La Montana ja papo",
+      "description": "The Pérez Art Museum Miami —officially known as the Jorge M. Pérez Art Museum of Miami-Dade County—is a contemporary art museum that relocated in 2013 to the Museum Park in Downtown Miami, Florida. Founded in 1984 as the Center for the Fine Arts, it became known as the Miami Art Museum from 1996 until it was renamed in 2013 upon the opening its new building designed by Herzog & de Meuron at 1103 Biscayne Boulevard.PAMM, along with the $275 million Phillip and Patricia Frost Museum of Science and a city park which are being built in the area with completion in 2017, is part of the 20-acre Museum Park.",
+      "price": "$20 - $100",
+      "duration": "3 day",
+      "itenarySchedule": [
+        {
+          "id": 1,
+          "temperature": "12 C",
+          "weatherType": "sunny",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        },
+        {
+          "id": 2,
+          "temperature": "12 C",
+          "weatherType": "sunny",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        },
+        {
+          "id": 3,
+          "temperature": "12 C",
+          "weatherType": "sunny",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "La Montana ja papo",
+      "description": "The Pérez Art Museum Miami —officially known as the Jorge M. Pérez Art Museum of Miami-Dade County—is a contemporary art museum that relocated in 2013 to the Museum Park in Downtown Miami, Florida. Founded in 1984 as the Center for the Fine Arts, it became known as the Miami Art Museum from 1996 until it was renamed in 2013 upon the opening its new building designed by Herzog & de Meuron at 1103 Biscayne Boulevard.PAMM, along with the $275 million Phillip and Patricia Frost Museum of Science and a city park which are being built in the area with completion in 2017, is part of the 20-acre Museum Park.",
+      "price": "$20 - $100",
+      "duration": "1 day",
+      "itenarySchedule": [
+        {
+          "id": 1,
+          "temperature": "12 C",
+          "weatherType": "sunny",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        },
+        {
+          "id": 2,
+          "temperature": "12 C",
+          "weatherType": "cloudy",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        },
+        {
+          "id": 3,
+          "temperature": "12 C",
+          "weatherType": "cloudy",
+          "facilities": [
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing",
+            "Detail Guided Maps",
+            "Comfortable Private Booked Transport",
+            "Basic First Aid",
+            "Waterproof Tents on twin/triple Sharing"
+          ]
+        }
+      ]
+    }
+  ],
+  "bookedTourDetails": {
+    "bookingData": {
+      "name": "hamza",
+      "email": "hamza",
+      "phoneNumber": "",
+      "tourId": 1,
+      "numberOfChildrens": "2",
+      "numberOfAdults": "2",
+      "phoneNumberCurrency": "qwq"
+    }
+  }
+}

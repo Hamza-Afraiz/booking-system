@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider } from "@mui/material/styles";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+//src
+import { Header, HomePage, Tours,TourDetails ,BookingDetails} from "./containers";
+import { theme } from "../src/theme/Theme";
+
+//styles
+import "./App.css";
+import { useBookedTours } from "./Hooks/useBookedTours";
 
 function App() {
+const { showBookedTours, isBookedTours } = useBookedTours();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div>
+          <Header showBookedTours={showBookedTours} />
+          <div className="App">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/Tours" element={<Tours isBookedTours={isBookedTours} />} />
+              <Route path="/TourDetails" element={<TourDetails />} />
+              <Route path="/BookingDetails" element={<BookingDetails />} />
+            </Routes>
+          </div>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

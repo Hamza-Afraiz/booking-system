@@ -1,12 +1,36 @@
+//lib
 import React from 'react';
 import ReactDOM from 'react-dom';
+import reportWebVitals from './reportWebVitals';
+import {
+  QueryClient,
+  QueryClientProvider
+} from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+//src
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+      keepPreviousData: true,
+      staleTime: Infinity,
+      cacheTime:Infinity
+      
+    
+
+    },
+  },
+})
 ReactDOM.render(
   <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
     <App />
+    <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

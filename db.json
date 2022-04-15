@@ -202,15 +202,33 @@
       ]
     }
   ],
-  "bookedTourDetails": {
-    "bookingData": {
-      "name": "hamza",
-      "email": "hamza",
-      "phoneNumber": "",
+  "bookedTourDetails": [
+    {
+      "name": "hamza Afraiz",
+      "email": "abbacce@gmail.com",
+      "phoneNumber": "3165772520",
       "tourId": 1,
       "numberOfChildrens": "2",
-      "numberOfAdults": "2",
-      "phoneNumberCurrency": "qwq"
+      "numberOfAdults": "3",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "hamza",
+      "email": "hamza abbasi",
+      "phoneNumber": "hamza",
+      "tourId": 1,
+      "numberOfChildrens": "sad",
+      "numberOfAdults": "sad"
+    },
+    {
+      "id": 5,
+      "name": "hamza",
+      "email": "sad",
+      "phoneNumber": "sadd",
+      "tourId": 2,
+      "numberOfChildrens": "sad",
+      "numberOfAdults": "hamza"
     }
-  }
+  ]
 }

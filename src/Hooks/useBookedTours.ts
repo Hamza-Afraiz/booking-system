@@ -15,7 +15,7 @@ export const CreateBooking = async (bookingData: BookingDetails) => {
     url: "/bookedTourDetails",
     method: "post",
     headers: {'Content-Type': 'application/json'},
-    data: { bookingData },
+    data: bookingData ,
   });
 
 

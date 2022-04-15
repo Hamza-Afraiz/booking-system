@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { LoadingSpinner, Tour } from "../../components";
 import { useBookedToursData } from "../../Hooks/useBookedTours";
 import { useToursData } from "../../Hooks/useToursData";
+import { BookingDetails } from "../../types/BookingDetails";
 import { TourData } from "../../types/TourData";
 //src
 import { useToursStyles } from "./Tours.styled";
@@ -14,7 +15,8 @@ interface ToursProps {
 const Tours = ({ isBookedTours }: ToursProps) => {
   const { data: AvailableToursData, isFetching: isFetchingTours } =
     useToursData();
-  const { data: BookedToursData, isFetching } = useBookedToursData();
+  const { data: BookedToursData } = useBookedToursData();
+  console.log("booked data", BookedToursData, "avaiable", AvailableToursData);
 
   const [ToursData, setToursData] = React.useState<TourData[]>([]);
   const theme = useTheme();
@@ -29,6 +31,15 @@ const Tours = ({ isBookedTours }: ToursProps) => {
       },
     });
   };
+  const editTourDetails = (tourId: number | undefined) => {
+    navigate("/bookingDetails", {
+      state: {
+        bookingTourDetails: BookedToursData?.find((o1: BookingDetails) =>
+          AvailableToursData?.some((o2: TourData) => o1.tourId === o2.id)
+        ),
+      },
+    });
+  };
 
   React.useEffect(() => {
     console.log(isBookedTours);
@@ -36,16 +47,14 @@ const Tours = ({ isBookedTours }: ToursProps) => {
     if (isBookedTours) {
       console.log(BookedToursData);
       console.log(
-        "tourData",
-        AvailableToursData?.filter(
-          (tour: TourData) =>
-            tour?.id === BookedToursData["bookingData"]?.tourId
+        "SEARCHED",
+        BookedToursData?.find((o1: BookingDetails) =>
+          AvailableToursData?.some((o2: TourData) => o1.tourId === o2.id)
         )
       );
       setToursData(
-        AvailableToursData?.filter(
-          (tour: TourData) =>
-            tour?.id === BookedToursData["bookingData"]?.tourId
+        AvailableToursData?.filter((o1: TourData) =>
+          BookedToursData?.some((o2: BookingDetails) => o1.id === o2.tourId)
         )
       );
     } else {
@@ -76,6 +85,7 @@ const Tours = ({ isBookedTours }: ToursProps) => {
             price={tour.price}
             viewTourDetails={viewTourDetails}
             isBookedTours={isBookedTours}
+            editTourDetails={editTourDetails}
           />
         ))}
       </div>

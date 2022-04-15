@@ -2,7 +2,7 @@
 import { Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useTourStyles = makeStyles<Theme>({
+export const useTourStyles = makeStyles<Theme>((theme) => ({
   tourContainer: {
     width: "28%",
     minWidth: "360px",
@@ -19,10 +19,14 @@ export const useTourStyles = makeStyles<Theme>({
   tourDetailsContainer: {
     width: "90%",
     display: "flex",
+    maxHeight: "150px",
+    [theme.breakpoints.down("md")]: {
+      maxHeight: "150px",
+    },
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "start",
-    padding: "0% 4% 1.5% 4%",
+    padding: "0% 5% 1.5% 5%",
   },
   tourImage: {
     width: "100%",
@@ -40,8 +44,8 @@ export const useTourStyles = makeStyles<Theme>({
   priceAndTimeDetails: {
     width: "100%",
     display: "flex",
-    justifyContent:'space-between',
-    alignItems:'center'
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   tourName: {
     fontSize: "20px",
@@ -49,4 +53,7 @@ export const useTourStyles = makeStyles<Theme>({
 
     marginTop: "1%",
   },
-});
+  customButton: {
+    width: "100%",
+  },
+}));

@@ -1,6 +1,6 @@
 //lib
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { CustomButton, LoadingSpinner } from "../../components";
 import { CountryCodes } from "../../constants/CountryCodes";
 import { PaymentMethods } from "../../constants/PaymentMethods";
@@ -10,22 +10,38 @@ import { CustomTextField } from "../../styledComponents";
 import "./BookingDetails.css";
 
 const BookingDetails = () => {
+  const location: any = useLocation();
+  const navigate = useNavigate();
+  const tourBookingDetails = location?.state?.bookingTourDetails;
+  const tourBookingId = location?.state?.tourId;
+
   const [phoneNumberCurrency, setPhoneNumberCurrency] = React.useState("");
   const [bookingDetails, setBookingDetails] = React.useState({
+    id: 0,
     name: "",
     email: "",
     phoneNumber: "",
-    tourId: 1,
+    tourId: tourBookingId,
     numberOfChildrens: "",
     numberOfAdults: "",
   });
 
-  const navigate = useNavigate();
   const {
     mutate: SubmitBooking,
     error: submitBookingError,
     isLoading,
   } = useSumbitBooking(bookingDetails);
+
+  React.useEffect(() => {
+    if (tourBookingDetails) {
+      const keys = Object.keys(tourBookingDetails);
+
+      keys.forEach((key, index) => {
+        updateBookingValue(key, tourBookingDetails[key]);
+      });
+      setBookingDetails(tourBookingDetails);
+    }
+  });
 
   const updateBookingValue = (name: string, value: string) => {
     const updatedValue = { [name]: value };
@@ -34,11 +50,11 @@ const BookingDetails = () => {
       ...bookingDetails,
       ...updatedValue,
     }));
-    console.log("booking", bookingDetails);
   };
 
   const onSubmitBooking = () => {
     SubmitBooking();
+    navigate("/tours");
   };
 
   return (
@@ -51,6 +67,7 @@ const BookingDetails = () => {
           label="Name"
           defaultValue=""
           className="text-field"
+          value={bookingDetails["name"]}
           fullWidth
           onChange={(e) => {
             updateBookingValue("name", e.target.value);
@@ -60,6 +77,7 @@ const BookingDetails = () => {
           id="outlined-disabled"
           label="Email"
           defaultValue=""
+          value={bookingDetails["email"]}
           className="text-field"
           fullWidth
           onChange={(e) => {
@@ -90,10 +108,11 @@ const BookingDetails = () => {
             id="outlined-disabled"
             label="Phone Number"
             defaultValue=""
+            value={bookingDetails["phoneNumber"]}
             className="text-field"
             fullWidth
             onChange={(e) => {
-              updateBookingValue("phoneNumberCurrency", e.target.value);
+              updateBookingValue("phoneNumber", e.target.value);
             }}
           />
         </div>
@@ -104,6 +123,7 @@ const BookingDetails = () => {
             id="outlined-disabled"
             label="Number of Adults"
             defaultValue=""
+            value={bookingDetails["numberOfAdults"]}
             className="text-field"
             fullWidth
             onChange={(e) => {
@@ -114,6 +134,7 @@ const BookingDetails = () => {
             id="outlined-disabled"
             label="Number of Childrens"
             defaultValue=""
+            value={bookingDetails["numberOfChildrens"]}
             className="text-field"
             fullWidth
             onChange={(e) => {

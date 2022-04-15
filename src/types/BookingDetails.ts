@@ -1,6 +1,7 @@
 export interface BookingDetails{
+    id:number,
     name:string,
-    email:String,
+    email:string,
     numberOfChildrens:string,
     numberOfAdults:string,
     phoneNumber:string,

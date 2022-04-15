@@ -1,11 +1,10 @@
 //lib
-import React from "react";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-//src
-import { useTourStyles } from "./Tour.styled";
+import React from "react";
 import { IconTitle } from "../../styledComponents";
 import CustomButton from "../CustomButton/CustomButton";
-import { useNavigate } from "react-router-dom";
+//src
+import { useTourStyles } from "./Tour.styled";
 
 interface TourData {
   id?: number;
@@ -15,6 +14,7 @@ interface TourData {
   duration?: string;
   isBookedTours: boolean;
   viewTourDetails: (tourId: number | undefined) => void;
+  editTourDetails: (tourId: number | undefined) => void;
 }
 
 const Tour = ({
@@ -25,7 +25,10 @@ const Tour = ({
   duration,
   isBookedTours,
   viewTourDetails,
+  editTourDetails,
 }: TourData) => {
+
+ 
   const [viewButtonStyle, setViewButtonStyle] = React.useState("none");
 
   const tourStyles = useTourStyles();
@@ -74,23 +77,35 @@ const Tour = ({
           </div>
         )}
         {isBookedTours && (
-          <div
-            className={tourStyles.priceAndTimeDetails}
-            onClick={() => {
-              viewTourDetails(id);
-            }}
-          >
-            <DeleteOutlinedIcon sx={{ color : "#F16B51",display:viewButtonStyle }} />
-            <CustomButton
-              text="Details"
-              width="90%"
-              display={viewButtonStyle}
+          <div className={tourStyles.priceAndTimeDetails}>
+            <DeleteOutlinedIcon
+              sx={{ color: "#F16B51", display: viewButtonStyle }}
             />
-            <CustomButton
-              text="Update"
-              width="90%"
-              display={viewButtonStyle}
-            />
+            <div
+              className={tourStyles.customButton}
+              onClick={() => {
+                viewTourDetails(id);
+              }}
+            >
+              <CustomButton
+                text="Details"
+                width="90%"
+                display={viewButtonStyle}
+              />
+            </div>
+
+            <div
+              className={tourStyles.customButton}
+              onClick={() => {
+                editTourDetails(id)
+              }}
+            >
+              <CustomButton
+                text="Update"
+                width="90%"
+                display={viewButtonStyle}
+              />
+            </div>
           </div>
         )}
       </div>

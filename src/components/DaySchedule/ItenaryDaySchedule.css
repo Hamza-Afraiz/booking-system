@@ -4,9 +4,9 @@
   display: flex;
   flex-direction: column;
   padding: 5%;
-  
+
   box-shadow: 0px 0px 8px #9fa4bd;
- 
+
   border-radius: 12px;
 }
 .itenary-temperature-details {
@@ -23,18 +23,18 @@
   font-weight: 500;
 }
 .facility {
-  width:100%;
+  width: 100%;
   text-align: left;
   font-size: 16px;
   line-height: 32px;
   font-family: "Poppins", sans-serif;
 }
-.temperature-icon-and-details-container{
-  width:20%;
+.temperature-icon-and-details-container {
+  width: 20%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.facilities-container{
-  width:100%
+.facilities-container {
+  width: 100%;
 }

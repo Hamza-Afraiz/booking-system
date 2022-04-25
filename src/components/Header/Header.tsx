@@ -30,7 +30,12 @@ const Header = ({ showBookedTours }: HeaderProps) => {
         elevation={0}
       >
         <Toolbar>
-          <LogoText  onClick={()=>{navigate('/')}}color={routeName === "/" ? "white" : "black"}>
+          <LogoText
+            onClick={() => {
+              navigate("/");
+            }}
+            color={routeName === "/" ? "white" : "black"}
+          >
             TourBay
           </LogoText>
           <div className={headerStylesClasses.headerTabs}>

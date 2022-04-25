@@ -1,7 +1,7 @@
 .booking-details-container {
   display: flex;
   flex-direction: row;
-  
+
   padding: 2%;
   margin: 0% 5% 0% 5%;
 }
@@ -29,14 +29,12 @@
 .form-heading h2 {
   font-family: "Poppins", sans-serif;
 }
-@media screen and (max-width:890px) {
-    .booking-details-container {
-        display: flex;
-        flex-direction: column;
-        
-        padding: 2%;
-        margin: 0% 5% 0% 5%;
-      }
+@media screen and (max-width: 890px) {
+  .booking-details-container {
+    display: flex;
+    flex-direction: column;
 
-    
+    padding: 2%;
+    margin: 0% 5% 0% 5%;
+  }
 }

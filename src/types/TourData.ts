@@ -4,7 +4,9 @@ export interface TourData{
     name?:string,
     description?:string,
     price?:string,
-    duration?:string
+    duration?:string,
+    startDate?:string,
+    endDate?:string,
     itenarySchedule?:itenarySchedule[]
     
 }

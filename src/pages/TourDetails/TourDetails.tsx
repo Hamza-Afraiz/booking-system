@@ -10,8 +10,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 //src
 import { CustomButton, TourImages } from "../../components";
-import { TourHighlights } from "../../containers";
-import ItenarySchedule from "../ItenarySchedule/ItenarySchedule";
+import { TourHighlights } from "..";
+import ItenarySchedule from "../../components/ItenarySchedule/ItenarySchedule";
 
 const TourDetails = () => {
   const tourDetailsClasses = useToursDetailsStyles();

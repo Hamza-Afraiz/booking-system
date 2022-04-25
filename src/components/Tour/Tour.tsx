@@ -1,6 +1,7 @@
 //lib
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import React from "react";
+import { useDeleteBooking } from "../../hooks/useBookedTours";
 import { IconTitle } from "../../styledComponents";
 import CustomButton from "../CustomButton/CustomButton";
 //src
@@ -15,6 +16,7 @@ interface TourData {
   isBookedTours: boolean;
   viewTourDetails: (tourId: number | undefined) => void;
   editTourDetails: (tourId: number | undefined) => void;
+  deleteBookingDetails:(bookingId:number|undefined)=>void
 }
 
 const Tour = ({
@@ -26,8 +28,8 @@ const Tour = ({
   isBookedTours,
   viewTourDetails,
   editTourDetails,
+  deleteBookingDetails,
 }: TourData) => {
-
  
   const [viewButtonStyle, setViewButtonStyle] = React.useState("none");
 
@@ -78,9 +80,12 @@ const Tour = ({
         )}
         {isBookedTours && (
           <div className={tourStyles.priceAndTimeDetails}>
-            <DeleteOutlinedIcon
-              sx={{ color: "#F16B51", display: viewButtonStyle }}
-            />
+            <div onClick={()=>{deleteBookingDetails(id)}}>
+              <DeleteOutlinedIcon
+                sx={{ color: "#F16B51", display: viewButtonStyle }}
+              />
+            </div>
+
             <div
               className={tourStyles.customButton}
               onClick={() => {
@@ -97,7 +102,7 @@ const Tour = ({
             <div
               className={tourStyles.customButton}
               onClick={() => {
-                editTourDetails(id)
+                editTourDetails(id);
               }}
             >
               <CustomButton

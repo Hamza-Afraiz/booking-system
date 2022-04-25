@@ -14,7 +14,7 @@ export const useIconTitleStyles = makeStyles<Theme, IconStyleProps>(
       justifyContent: "space-between",
       alignItems: "center",
       minWidth: "33%",
-      margin:'1%'
+      margin: "1%",
     },
     iconTitle: {
       minWidth: "80%",
@@ -41,11 +41,7 @@ export const useIconTitleStyles = makeStyles<Theme, IconStyleProps>(
       borderRadius: "50%",
     },
     iconContainer: {
-
-     
-      [theme.breakpoints.down("md")]: {
-        
-      },
+      [theme.breakpoints.down("md")]: {},
     },
   })
 );

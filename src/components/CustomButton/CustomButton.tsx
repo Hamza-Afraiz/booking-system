@@ -8,7 +8,14 @@ interface CustomButtonProps {
 
 const CustomButton = ({ width, text, display }: CustomButtonProps) => {
   return (
-    <div style={{ width: "100%", borderRadius: "12px",display:'flex',justifyContent:"center" }}>
+    <div
+      style={{
+        width: "100%",
+        borderRadius: "12px",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       <Button
         variant="contained"
         sx={{

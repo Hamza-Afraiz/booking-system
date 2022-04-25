@@ -1,6 +1,6 @@
 import React from 'react';
 //src
-import { ItenaryDaySchedule } from '../../components';
+import { ItenaryDaySchedule } from '..';
 import { TourData } from '../../types/TourData';
 //style
 import './ItenarySchedule.css'

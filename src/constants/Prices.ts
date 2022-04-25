@@ -1,23 +1,20 @@
 export const Prices = [
+ 
   {
-    value: "Choose Here",
-    label: "Choose Here",
+    value: "$50 - $100",
+    label: "$50 - $100",
   },
   {
-    value: "USD",
-    label: "$50 -$200",
+    value: "$150 - $200",
+    label: "$150 - $200",
   },
   {
-    value: "EUR",
-    label: "$150 -$200",
+    value: "$250 - $300",
+    label: "$250 - $300",
   },
   {
-    value: "BTC",
-    label: "$250 -$200",
-  },
-  {
-    value: "JPY",
-    label: "$350 -$200",
+    value: "$350 - $400",
+    label: "$350 - $400",
   },
 ];
 

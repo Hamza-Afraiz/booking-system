@@ -2,33 +2,43 @@
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import MenuItem from "@mui/material/MenuItem";
 import {
-    DateRange, DateRangePicker
+  DateRange,
+  DateRangePicker,
 } from "@mui/x-date-pickers-pro/DateRangePicker";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 //Src
 import { PopularSearches } from "../../components";
 import { Prices } from "../../constants/Prices";
 import { IconTitle } from "../../styledComponents";
 import { CustomTextField } from "../../styledComponents";
 //styles
-import homePageStyles, { FilterContainer, SearchContainer } from "./HomePage.styled";
-
-
+import homePageStyles, {
+  FilterContainer,
+  SearchContainer,
+} from "./HomePage.styled";
 
 const HomePage = () => {
-  const [price, setPrice] = React.useState("Choose Here");
-  const [value, setValue] = React.useState<DateRange<Date>>([null, null]);
+  const navigate = useNavigate();
+
+  const [price, setPrice] = React.useState("$50 - $100");
+  const [tourDate, setTourDate] = React.useState<DateRange<Date>>([null, null]);
+  const [tourStartDate, setTourStartDate] = React.useState("");
+  const [tourLocation, setTourLocation] = React.useState("");
 
   const homePageClasses = homePageStyles({ routeName: "Choose Here" });
 
   const setDateRange = (date: any) => {
-    // console.log("date", date);
-    const temp = date[0];
-    // console.log("temp", temp);
-    //   setValue(`${date[0]?.subString(4,12)}-${date[0]?.subString(4,12)}`)
+    setTourStartDate(date[0]?.toString()?.substring(4, 15));
   };
+  const onSearch = () => {
+    navigate("/Tours", {
+      state: { filters: { tourStartDate, tourLocation, price } },
+    });
+  };
+
   return (
     <div className={homePageClasses.homePage}>
       <div className={homePageClasses.backgroundImageDiv}>
@@ -45,32 +55,35 @@ const HomePage = () => {
             id="standard-basic"
             label="Where you want to go?"
             variant="standard"
+            value={tourLocation}
+            onChange={(tourLocation) => {
+              setTourLocation(tourLocation.target.value);
+            }}
           />
         </FilterContainer>
         <FilterContainer>
           <IconTitle text="Choose Date" iconName="date" bold={true} />
           {/* <IconTitle text="Choose Here" iconName="arrow-up" bold={false} /> */}
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <LocalizationProvider dateAdapter={AdapterDateFns} format="DD-MM">
             <DateRangePicker
               startText="Check-in"
               endText="Check-out"
-              value={value}
+              value={tourDate}
+              toolbarFormat="dd-mm"
               onChange={(newValue: any) => {
-                console.log("value", newValue);
-                setValue(newValue);
+                setTourDate(newValue);
                 setDateRange(newValue);
               }}
               renderInput={(startProps: any, endProps: any) => (
-                <div className={homePageClasses.dateRange}> 
+                <div className={homePageClasses.dateRange}>
                   <CustomTextField
-                   
                     className={homePageClasses.dateRangePicker}
                     variant="standard"
                     {...startProps}
                   />
 
                   <CustomTextField
-                      className={homePageClasses.dateRangePicker}
+                    className={homePageClasses.dateRangePicker}
                     variant="standard"
                     {...endProps}
                   />
@@ -90,7 +103,6 @@ const HomePage = () => {
             }}
             variant="standard"
           >
-            
             {Prices.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
@@ -99,7 +111,7 @@ const HomePage = () => {
           </CustomTextField>
         </FilterContainer>
         <div className={homePageClasses.searchIcon}>
-          <SearchRoundedIcon />
+          <SearchRoundedIcon onClick={onSearch} />
         </div>
       </SearchContainer>
 

@@ -6,6 +6,8 @@
       "description": "The Pérez Art Museum Miami —officially known as the Jorge M. Pérez Art Museum of Miami-Dade County—is a contemporary art museum that relocated in 2013 to the Museum Park in Downtown Miami, Florida. Founded in 1984 as the Center for the Fine Arts, it became known as the Miami Art Museum from 1996 until it was renamed in 2013 upon the opening its new building designed by Herzog & de Meuron at 1103 Biscayne Boulevard.PAMM, along with the $275 million Phillip and Patricia Frost Museum of Science and a city park which are being built in the area with completion in 2017, is part of the 20-acre Museum Park.",
       "price": "$50 - $100",
       "duration": "3 days",
+      "startDate": "Apr 04 2022",
+      "endDate": "Apr 07 2022",
       "itenarySchedule": [
         {
           "id": 1,
@@ -52,8 +54,10 @@
       "id": 2,
       "name": "Golaz Art Pochinki Miami",
       "description": "The Pérez Art Museum Miami —officially known as the Jorge M. Pérez Art Museum of Miami-Dade County—is a contemporary art museum that relocated in 2013 to the Museum Park in Downtown Miami, Florida. Founded in 1984 as the Center for the Fine Arts, it became known as the Miami Art Museum from 1996 until it was renamed in 2013 upon the opening its new building designed by Herzog & de Meuron at 1103 Biscayne Boulevard.PAMM, along with the $275 million Phillip and Patricia Frost Museum of Science and a city park which are being built in the area with completion in 2017, is part of the 20-acre Museum Park.",
-      "price": "$500 - $1000",
+      "price": "$50 - $100",
       "duration": "2 days",
+      "startDate": "Apr 06 2022",
+      "endDate": "Apr 08 2022",
       "itenarySchedule": [
         {
           "id": 1,
@@ -89,6 +93,8 @@
       "description": "The Pérez Art Museum Miami —officially known as the Jorge M. Pérez Art Museum of Miami-Dade County—is a contemporary art museum that relocated in 2013 to the Museum Park in Downtown Miami, Florida. Founded in 1984 as the Center for the Fine Arts, it became known as the Miami Art Museum from 1996 until it was renamed in 2013 upon the opening its new building designed by Herzog & de Meuron at 1103 Biscayne Boulevard.PAMM, along with the $275 million Phillip and Patricia Frost Museum of Science and a city park which are being built in the area with completion in 2017, is part of the 20-acre Museum Park.",
       "price": "$20 - $100",
       "duration": "1 day",
+      "startDate": "Apr 04 2022",
+      "endDate": "Apr 05 2022",
       "itenarySchedule": [
         {
           "id": 1,
@@ -111,6 +117,8 @@
       "description": "The Pérez Art Museum Miami —officially known as the Jorge M. Pérez Art Museum of Miami-Dade County—is a contemporary art museum that relocated in 2013 to the Museum Park in Downtown Miami, Florida. Founded in 1984 as the Center for the Fine Arts, it became known as the Miami Art Museum from 1996 until it was renamed in 2013 upon the opening its new building designed by Herzog & de Meuron at 1103 Biscayne Boulevard.PAMM, along with the $275 million Phillip and Patricia Frost Museum of Science and a city park which are being built in the area with completion in 2017, is part of the 20-acre Museum Park.",
       "price": "$20 - $100",
       "duration": "3 day",
+      "startDate": "Apr 04 2022",
+      "endDate": "Apr 07 2022",
       "itenarySchedule": [
         {
           "id": 1,
@@ -159,6 +167,8 @@
       "description": "The Pérez Art Museum Miami —officially known as the Jorge M. Pérez Art Museum of Miami-Dade County—is a contemporary art museum that relocated in 2013 to the Museum Park in Downtown Miami, Florida. Founded in 1984 as the Center for the Fine Arts, it became known as the Miami Art Museum from 1996 until it was renamed in 2013 upon the opening its new building designed by Herzog & de Meuron at 1103 Biscayne Boulevard.PAMM, along with the $275 million Phillip and Patricia Frost Museum of Science and a city park which are being built in the area with completion in 2017, is part of the 20-acre Museum Park.",
       "price": "$20 - $100",
       "duration": "1 day",
+      "startDate": "Apr 04 2022",
+      "endDate": "Apr 05 2022",
       "itenarySchedule": [
         {
           "id": 1,
@@ -204,31 +214,13 @@
   ],
   "bookedTourDetails": [
     {
-      "name": "hamza Afraiz",
-      "email": "abbacce@gmail.com",
-      "phoneNumber": "3165772520",
-      "tourId": 1,
-      "numberOfChildrens": "2",
-      "numberOfAdults": "3",
-      "id": 3
-    },
-    {
-      "id": 4,
-      "name": "hamza",
-      "email": "hamza abbasi",
-      "phoneNumber": "hamza",
-      "tourId": 1,
-      "numberOfChildrens": "sad",
-      "numberOfAdults": "sad"
-    },
-    {
-      "id": 5,
-      "name": "hamza",
-      "email": "sad",
-      "phoneNumber": "sadd",
+      "id": 1,
+      "name": "hamza abbasi",
+      "email": "hamza@gmail.com",
+      "phoneNumber": "3165772420",
       "tourId": 2,
-      "numberOfChildrens": "sad",
-      "numberOfAdults": "hamza"
+      "numberOfChildrens": "3",
+      "numberOfAdults": "2"
     }
   ]
 }

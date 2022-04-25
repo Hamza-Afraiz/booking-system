@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { CustomButton, LoadingSpinner } from "../../components";
 import { CountryCodes } from "../../constants/CountryCodes";
 import { PaymentMethods } from "../../constants/PaymentMethods";
-import { useSumbitBooking } from "../../Hooks/useBookedTours";
+import { useSumbitBooking } from "../../hooks/useBookedTours";
 import { CustomTextField } from "../../styledComponents";
 //styles
 import "./BookingDetails.css";
@@ -41,7 +41,7 @@ const BookingDetails = () => {
       });
       setBookingDetails(tourBookingDetails);
     }
-  });
+  }, [tourBookingDetails]);
 
   const updateBookingValue = (name: string, value: string) => {
     const updatedValue = { [name]: value };
@@ -165,7 +165,7 @@ const BookingDetails = () => {
           {isLoading && submitBookingError ? (
             <LoadingSpinner width="100%" height="100%" color="inherit" />
           ) : (
-            <CustomButton width="100%" text="Confirm" display="block" />
+            <CustomButton width="100%" text={tourBookingDetails ? "Update" :"Confirm"} display="block" />
           )}
         </div>
       </div>

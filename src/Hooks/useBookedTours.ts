@@ -14,13 +14,29 @@ export const CreateBooking = async (bookingData: BookingDetails) => {
   return await request({
     url: "/bookedTourDetails",
     method: "post",
-    headers: {'Content-Type': 'application/json'},
-    data: bookingData ,
+    headers: { "Content-Type": "application/json" },
+    data: bookingData,
   });
-
-
 };
-export const useSumbitBooking = (bookingData:BookingDetails) => {
+export const DeleteBooking = async (bookingId: string | undefined) => {
+  return await request({
+    url: `/bookedTourDetails/${bookingId}`,
+    method: "delete",
+    headers: { "Content-Type": "application/json" },
+  });
+};
+export const useDeleteBooking = () => {
+  const queryClient = useQueryClient();
+  return useMutation(
+    ({ bookingId }: { bookingId: string }) => DeleteBooking(bookingId),
+    {
+      onSettled: () => {
+        queryClient.invalidateQueries("bookedToursData");
+      },
+    }
+  );
+};
+export const useSumbitBooking = (bookingData: BookingDetails) => {
   const queryClient = useQueryClient();
   return useMutation(() => CreateBooking(bookingData), {
     onSettled: () => {
@@ -30,6 +46,5 @@ export const useSumbitBooking = (bookingData:BookingDetails) => {
 };
 export const useBookedTours = () => {
   const [isBookedTours, showBookedTours] = React.useState(false);
-  return {  showBookedTours, isBookedTours };
+  return { showBookedTours, isBookedTours };
 };
-

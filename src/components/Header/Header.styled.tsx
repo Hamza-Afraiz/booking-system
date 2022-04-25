@@ -10,13 +10,12 @@ interface headerStylesProps {
   routeName?: string;
 }
 
-const headerStyles = makeStyles<Theme, headerStylesProps>((theme)=>({
+const headerStyles = makeStyles<Theme, headerStylesProps>((theme) => ({
   header: {
     backgroundImage: ({ routeName }) =>
       routeName === "/" ? `url(${headerBackground})` : `url(${whiteHeader})`,
     color: ({ routeName }) => (routeName === "/" ? "transparent" : "white"),
-    minWidth:'100%'
-    
+    minWidth: "100%",
   },
   headerTabs: {
     width: "30%",
@@ -41,7 +40,6 @@ const headerStyles = makeStyles<Theme, headerStylesProps>((theme)=>({
     },
     [theme.breakpoints.down("md")]: {
       fontSize: "0.5rem",
-      
     },
   },
 }));

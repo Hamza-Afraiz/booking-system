@@ -29,24 +29,24 @@ import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
 
 export const CustomTextField = styled(TextField, {
-  shouldForwardProp: (props) => props !== "focusColor"
+  shouldForwardProp: (props) => props !== "focusColor",
 })((p) => ({
   // input label when focused
   "& label.Mui-focused": {
-    color: "#F16B51"
+    color: "#F16B51",
   },
   // focused color for input with variant='standard'
   "& .MuiInput-underline:after": {
-    borderBottomColor: "#F16B51"
+    borderBottomColor: "#F16B51",
   },
   // focused color for input with variant='filled'
   "& .MuiFilledInput-underline:after": {
-    borderBottomColor: "#F16B51"
+    borderBottomColor: "#F16B51",
   },
   // focused color for input with variant='outlined'
   "& .MuiOutlinedInput-root": {
     "&.Mui-focused fieldset": {
-      borderColor:"#F16B51"
-    }
-  }
+      borderColor: "#F16B51",
+    },
+  },
 }));

@@ -14,7 +14,7 @@ const BookingDetails = () => {
   const navigate = useNavigate();
   const tourBookingDetails = location?.state?.bookingTourDetails;
   const tourBookingId = location?.state?.tourId;
-
+  const numericRegExpression = new RegExp('^[0-9]*$');
   const [phoneNumberCurrency, setPhoneNumberCurrency] = React.useState("");
   const [bookingDetails, setBookingDetails] = React.useState({
     id: 0,
@@ -24,6 +24,12 @@ const BookingDetails = () => {
     tourId: tourBookingId,
     numberOfChildrens: "",
     numberOfAdults: "",
+  });
+  const [errors, setErrors] = React.useState({
+    email: "",
+    phoneNumber: "",
+    numberOfAdults: "",
+    numberOfChildrens: "",
   });
 
   const {
@@ -44,6 +50,53 @@ const BookingDetails = () => {
   }, [tourBookingDetails]);
 
   const updateBookingValue = (name: string, value: string) => {
+    switch (name) {
+      case "email":
+        const emailError = {
+          email:
+            !value.includes("@") && !value.includes(".com")
+              ? "Please check and re-enter email."
+              : "",
+        };
+        setErrors((errors) => ({
+          ...errors,
+          ...emailError,
+        }));
+        break;
+      case "phoneNumber":
+        const phoneNumberError = {
+          phoneNumber: !numericRegExpression.test(value)  
+            ? "Please check and re-enter Phone."
+            : "",
+        };
+        setErrors((errors) => ({
+          ...errors,
+          ...phoneNumberError,
+        }));
+        break;
+      case "numberOfChildrens":
+        const numberOfChildrensError = {
+          numberOfChildrens: !numericRegExpression.test(value)
+            ? "Please enter some number."
+            : "",
+        };
+        setErrors((errors) => ({
+          ...errors,
+          ...numberOfChildrensError,
+        }));
+        break;
+      case "numberOfAdults":
+        const numberOfAdultsError = {
+          numberOfAdults: !numericRegExpression.test(value)
+            ? "Please enter some number."
+            : "",
+        };
+        setErrors((errors) => ({
+          ...errors,
+          ...numberOfAdultsError,
+        }));
+        break;
+    }
     const updatedValue = { [name]: value };
 
     setBookingDetails((bookingDetails) => ({
@@ -53,6 +106,12 @@ const BookingDetails = () => {
   };
 
   const onSubmitBooking = () => {
+    if (
+      errors["phoneNumber"] ||
+      errors["email"] ||
+      errors["numberOfAdults"] ||
+      errors["numberOfChildrens"]
+    )return;
     SubmitBooking();
     navigate("/tours");
   };
@@ -77,7 +136,9 @@ const BookingDetails = () => {
           id="outlined-disabled"
           label="Email"
           defaultValue=""
+          error={errors["email"] !== ""}
           value={bookingDetails["email"]}
+          helperText={errors["email"]}
           className="text-field"
           fullWidth
           onChange={(e) => {
@@ -108,6 +169,8 @@ const BookingDetails = () => {
             id="outlined-disabled"
             label="Phone Number"
             defaultValue=""
+            error={errors["phoneNumber"] !== ""}
+            helperText={errors["phoneNumber"]}
             value={bookingDetails["phoneNumber"]}
             className="text-field"
             fullWidth
@@ -125,6 +188,8 @@ const BookingDetails = () => {
             defaultValue=""
             value={bookingDetails["numberOfAdults"]}
             className="text-field"
+            error={errors["numberOfAdults"] !== ""}
+            helperText={errors["numberOfAdults"]}
             fullWidth
             onChange={(e) => {
               updateBookingValue("numberOfAdults", e.target.value);
@@ -137,6 +202,8 @@ const BookingDetails = () => {
             value={bookingDetails["numberOfChildrens"]}
             className="text-field"
             fullWidth
+            error={errors["numberOfChildrens"] !== ""}
+            helperText={errors["numberOfChildrens"]}
             onChange={(e) => {
               updateBookingValue("numberOfChildrens", e.target.value);
             }}
@@ -165,7 +232,11 @@ const BookingDetails = () => {
           {isLoading && submitBookingError ? (
             <LoadingSpinner width="100%" height="100%" color="inherit" />
           ) : (
-            <CustomButton width="100%" text={tourBookingDetails ? "Update" :"Confirm"} display="block" />
+            <CustomButton
+              width="100%"
+              text={tourBookingDetails ? "Update" : "Confirm"}
+              display="block"
+            />
           )}
         </div>
       </div>

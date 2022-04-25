@@ -20,6 +20,7 @@
 }
 .text-field {
   padding: 2%;
+  max-height:56px
 }
 .text-fields-container {
   display: flex;

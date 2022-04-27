@@ -1,7 +1,11 @@
 //lib
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { CustomButton, LoadingSpinner } from "../../components";
+import {
+  CustomButton,
+  LoadingSpinner,
+  PopUpNotification,
+} from "../../components";
 import { CountryCodes } from "../../constants/CountryCodes";
 import { PaymentMethods } from "../../constants/PaymentMethods";
 import { useSumbitBooking } from "../../hooks/useBookedTours";
@@ -12,9 +16,11 @@ import "./BookingDetails.css";
 const BookingDetails = () => {
   const location: any = useLocation();
   const navigate = useNavigate();
+
   const tourBookingDetails = location?.state?.bookingTourDetails;
   const tourBookingId = location?.state?.tourId;
-  const numericRegExpression = new RegExp('^[0-9]*$');
+
+  const numericRegExpression = new RegExp("^[0-9]*$");
   const [phoneNumberCurrency, setPhoneNumberCurrency] = React.useState("");
   const [bookingDetails, setBookingDetails] = React.useState({
     id: 0,
@@ -36,13 +42,12 @@ const BookingDetails = () => {
     mutate: SubmitBooking,
     error: submitBookingError,
     isLoading,
-  } = useSumbitBooking(bookingDetails);
+    isSuccess,
+  } = useSumbitBooking();
 
   React.useEffect(() => {
     if (tourBookingDetails) {
-      const keys = Object.keys(tourBookingDetails);
-
-      keys.forEach((key, index) => {
+      Object.keys(tourBookingDetails).forEach((key, index) => {
         updateBookingValue(key, tourBookingDetails[key]);
       });
       setBookingDetails(tourBookingDetails);
@@ -65,7 +70,7 @@ const BookingDetails = () => {
         break;
       case "phoneNumber":
         const phoneNumberError = {
-          phoneNumber: !numericRegExpression.test(value)  
+          phoneNumber: !numericRegExpression.test(value)
             ? "Please check and re-enter Phone."
             : "",
         };
@@ -111,13 +116,22 @@ const BookingDetails = () => {
       errors["email"] ||
       errors["numberOfAdults"] ||
       errors["numberOfChildrens"]
-    )return;
-    SubmitBooking();
-    navigate("/tours");
+    )
+      return;
+    SubmitBooking({bookingData:bookingDetails});
+   
   };
 
   return (
     <div className="booking-details-container">
+      {isSuccess && (
+        <PopUpNotification
+          popUpText="Booking successfully completed."
+          onOk={() => {
+            navigate("/Tours");
+          }}
+        />
+      )}
       <div className="booking-form">
         <h2 className="form-heading">Confirm Your Booking</h2>
 

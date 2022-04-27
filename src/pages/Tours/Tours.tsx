@@ -1,7 +1,7 @@
 import { useTheme } from "@mui/material/styles";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { LoadingSpinner, Tour } from "../../components";
+import { LoadingSpinner, PopUpNotification, Tour } from "../../components";
 import {
   useBookedToursData,
   useDeleteBooking,
@@ -26,6 +26,7 @@ const Tours = ({ isBookedTours }: ToursProps) => {
   const SearchedToursData = useSearchFilters(filters ? filters : undefined);
 
   const [ToursData, setToursData] = React.useState<TourData[]>([]);
+  const [notification, setNotification] = React.useState(false);
   const [deleteBookingId, setDeleteBookingId] = React.useState("");
 
   const {
@@ -33,8 +34,9 @@ const Tours = ({ isBookedTours }: ToursProps) => {
     isFetching: isFetchingTours,
     isLoading: isLoadingTours,
   } = useToursData();
+
   const { data: BookedToursData } = useBookedToursData();
-  const { mutate: DeleteBooking, isLoading } = useDeleteBooking();
+  const { mutate: DeleteBooking, isLoading, isSuccess } = useDeleteBooking();
 
   const viewTourDetails = (tourId: number | undefined) => {
     navigate("/tourDetails", {
@@ -58,6 +60,21 @@ const Tours = ({ isBookedTours }: ToursProps) => {
   };
 
   const deleteBookingDetails = (tourId: number | undefined) => {
+    
+    setDeleteBookingId(tourId?.toString() || "");
+    const tourData = AvailableToursData?.find(
+      (tour: TourData) => tour.id === tourId
+    );
+
+    const tourStartingTime = Math.ceil(
+      (new Date(tourData.startDate).getTime() - new Date().getTime()) /
+        (1000 * 60 * 60 * 24)
+    );
+    if (tourStartingTime < 3) {
+      setNotification(true);
+      return;
+    }
+
     DeleteBooking({
       bookingId: BookedToursData?.find(
         (AvailableTour: BookingDetails) => AvailableTour?.tourId === tourId
@@ -84,6 +101,15 @@ const Tours = ({ isBookedTours }: ToursProps) => {
 
   return (
     <div className={toursClasses.toursContainer}>
+      {notification && (
+        <PopUpNotification
+          popUpText="You cant delete the tour because remaining days are less than 3 now."
+          onOk={() => {setNotification(false)}}
+        />
+      )}
+      {isSuccess && (
+        <PopUpNotification popUpText="Deleted Successfully." onOk={() => {setNotification(false)}} />
+      )}
       {!!SearchedToursData?.length && (
         <h1 className={toursClasses.heading}>
           Top Destinations At “{filters?.tourLocation}”

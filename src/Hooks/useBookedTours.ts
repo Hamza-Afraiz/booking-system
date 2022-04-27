@@ -32,15 +32,18 @@ export const useDeleteBooking = () => {
     {
       onSettled: () => {
         queryClient.invalidateQueries("bookedToursData");
+      
       },
     }
   );
 };
-export const useSumbitBooking = (bookingData: BookingDetails) => {
+export const useSumbitBooking = () => {
   const queryClient = useQueryClient();
-  return useMutation(() => CreateBooking(bookingData), {
+  return useMutation(({bookingData}:{bookingData:BookingDetails}) => CreateBooking(bookingData), {
     onSettled: () => {
+      debugger
       queryClient.invalidateQueries("bookedToursData");
+      queryClient.invalidateQueries("toursData");
     },
   });
 };

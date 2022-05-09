@@ -41,7 +41,7 @@ export const useSumbitBooking = () => {
   const queryClient = useQueryClient();
   return useMutation(({bookingData}:{bookingData:BookingDetails}) => CreateBooking(bookingData), {
     onSettled: () => {
-      debugger
+  
       queryClient.invalidateQueries("bookedToursData");
       queryClient.invalidateQueries("toursData");
     },

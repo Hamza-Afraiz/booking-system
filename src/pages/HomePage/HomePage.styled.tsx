@@ -36,6 +36,9 @@ const homePageStyles = makeStyles<Theme, headerStylesProps>((theme) => ({
       height: "50px",
       marginTop: "2%",
     },
+    "&:hover":{
+    cursor:'pointer'
+    }
   },
   dateRangePicker: {
     width: "30%",

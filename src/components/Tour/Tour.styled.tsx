@@ -6,7 +6,7 @@ export const useTourStyles = makeStyles<Theme>((theme) => ({
   tourContainer: {
     width: "28%",
     minWidth: "360px",
-    maxHeight: "418px",
+    maxHeight: "370px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
@@ -15,6 +15,9 @@ export const useTourStyles = makeStyles<Theme>((theme) => ({
     margin: "0% 3% 4% 1%",
     boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
     borderRadius: "12px",
+    [theme.breakpoints.down("md")]: {
+      maxHeight: "418px",
+    },
   },
   tourDetailsContainer: {
     width: "90%",

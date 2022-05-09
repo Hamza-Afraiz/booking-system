@@ -23,7 +23,7 @@ import homePageStyles, {
 const HomePage = () => {
   const navigate = useNavigate();
 
-  const [price, setPrice] = React.useState("$50 - $100");
+  const [price, setPrice] = React.useState("50,100");
   const [tourDate, setTourDate] = React.useState<DateRange<Date>>([null, null]);
   const [tourStartDate, setTourStartDate] = React.useState("");
   const [tourLocation, setTourLocation] = React.useState("");
